@@ -1,0 +1,16 @@
+# The cask is one Homebrew accepts: its style, and an audit that downloads the disk image and
+# checks it against the cask's SHA-256 and its signature.
+name: Check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  cask:
+    runs-on: macos-latest
+    steps:
+      - uses: Homebrew/actions/setup-homebrew@main
+      - run: brew style counterbeing/siphon
+      - run: brew audit --cask --strict --online counterbeing/siphon/siphon
