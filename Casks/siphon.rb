@@ -4,7 +4,7 @@ cask "siphon" do
 
   url "https://download.siphon.watch/Siphon-#{version}.dmg"
   name "Siphon"
-  desc "Voice capture from Apple Watch Ultra to the AI agent on your Mac"
+  desc "Voice capture from Apple Watch Ultra to your AI agent"
   homepage "https://siphon.watch/"
 
   livecheck do
@@ -16,7 +16,7 @@ cask "siphon" do
 
   auto_updates true
   depends_on arch: :arm64
-  depends_on macos: ">= :tahoe"
+  depends_on macos: :tahoe
 
   app "Siphon.app"
 
